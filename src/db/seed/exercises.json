@@ -1,0 +1,1103 @@
+[
+  {
+    "slug": "goblet-squat",
+    "name": "Goblet Squat",
+    "movement_pattern": "squat",
+    "primary_muscles": ["quadriceps", "glutes"],
+    "secondary_muscles": ["core", "upper back", "adductors"],
+    "purpose": "The primary loaded squat pattern in this program because the front-loaded weight naturally teaches an upright torso and full-depth position.",
+    "equipment": ["dumbbell", "kettlebell"],
+    "difficulty": 2,
+    "instructions": "Hold a dumbbell or kettlebell vertically against your chest with both hands, elbows tucked. Stand with feet shoulder-width apart, toes turned out slightly. Sit down between your hips until your elbows lightly touch the inside of your knees, then drive back up through your whole foot.",
+    "form_cues": [
+      "Keep the weight glued to your sternum",
+      "Push knees out in line with your toes",
+      "Keep heels down the whole rep",
+      "Chest tall, elbows point down not out"
+    ],
+    "common_errors": [
+      "Letting the weight drift away from the chest, tipping the torso forward",
+      "Heels lifting as depth increases",
+      "Knees caving inward on the way up"
+    ],
+    "regressions": ["Bodyweight Box Squat", "Bodyweight squat holding a post for balance"],
+    "progressions": ["Dumbbell Front Squat", "Pause goblet squat (3-second bottom hold)"],
+    "contraindications": ["reduce depth with acute knee pain"],
+    "demo_url": ""
+  },
+  {
+    "slug": "dumbbell-front-squat",
+    "name": "Dumbbell Front Squat",
+    "movement_pattern": "squat",
+    "primary_muscles": ["quadriceps", "glutes"],
+    "secondary_muscles": ["core", "upper back"],
+    "purpose": "Allows heavier bilateral squat loading than a single goblet weight once the pattern is solid.",
+    "equipment": ["dumbbell"],
+    "difficulty": 3,
+    "instructions": "Clean two dumbbells to your shoulders and rest one end of each on the front of your shoulders, elbows lifted. Squat down under control until your thighs are at or below parallel, keeping your torso tall. Stand back up by driving the floor away, keeping the dumbbells stacked over your midfoot.",
+    "form_cues": [
+      "Elbows up so the dumbbells sit on the shoulders, not the arms",
+      "Brace before you descend",
+      "Control down, drive up fast",
+      "Whole foot stays planted"
+    ],
+    "common_errors": [
+      "Letting the elbows drop so the arms hold the load and fatigue first",
+      "Rounding the upper back under heavier weight",
+      "Cutting depth as load increases"
+    ],
+    "regressions": ["Goblet Squat", "Lighter dumbbells with a pause"],
+    "progressions": ["Heavier dumbbells", "1.5-rep front squat (bottom, halfway up, bottom, stand)"],
+    "contraindications": ["avoid with acute wrist or anterior shoulder pain"],
+    "demo_url": ""
+  },
+  {
+    "slug": "bodyweight-box-squat",
+    "name": "Bodyweight Box Squat",
+    "movement_pattern": "squat",
+    "primary_muscles": ["quadriceps", "glutes"],
+    "secondary_muscles": ["hamstrings", "core"],
+    "purpose": "A depth-controlled squat used for warm-ups, high-rep conditioning circuits, and as a reset when squat mechanics degrade.",
+    "equipment": ["bodyweight", "box", "bench"],
+    "difficulty": 1,
+    "instructions": "Stand in front of a box or bench about knee height with feet shoulder-width apart. Reach your hips back and squat until you lightly touch the box, keeping your weight over your midfoot. Tap without fully sitting, then stand by squeezing your glutes at the top.",
+    "form_cues": [
+      "Touch the box lightly, do not plop",
+      "Arms reach forward as a counterbalance",
+      "Shins stay fairly vertical as hips reach back",
+      "Stand fully tall between reps"
+    ],
+    "common_errors": [
+      "Collapsing onto the box and relaxing at the bottom",
+      "Looking down and rounding the back",
+      "Rocking forward off the box instead of driving through the feet"
+    ],
+    "regressions": ["Squat to a higher box", "Sit-to-stand with hands on thighs"],
+    "progressions": ["Lower the box height", "Goblet Squat"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "kettlebell-deadlift",
+    "name": "Kettlebell Deadlift",
+    "movement_pattern": "hinge",
+    "primary_muscles": ["glutes", "hamstrings"],
+    "secondary_muscles": ["erector spinae", "lats", "grip"],
+    "purpose": "The entry-point hinge that grooves picking a load off the floor with a neutral spine before swings and heavier hinging.",
+    "equipment": ["kettlebell", "floor"],
+    "difficulty": 1,
+    "instructions": "Stand over a kettlebell with the handle roughly under your shoelaces. Push your hips back and bend your knees slightly until you can grip the handle with both hands and a flat back. Stand up by pushing the floor away and driving your hips forward, then reverse the motion to set it down.",
+    "form_cues": [
+      "Hips back first, then bend the knees",
+      "Flat back from head to tailbone",
+      "Pull the slack out before you lift",
+      "Finish tall with glutes squeezed, not leaning back"
+    ],
+    "common_errors": [
+      "Squatting the weight up instead of hinging",
+      "Rounding the lower back to reach the handle",
+      "Hyperextending the lower back at lockout"
+    ],
+    "regressions": ["Elevate the kettlebell on a box", "Hip hinge drill with a dowel along the spine"],
+    "progressions": ["Heavier kettlebell", "Kettlebell Swing"],
+    "contraindications": ["avoid during acute low back flare-up"],
+    "demo_url": ""
+  },
+  {
+    "slug": "dumbbell-romanian-deadlift",
+    "name": "Dumbbell Romanian Deadlift",
+    "movement_pattern": "hinge",
+    "primary_muscles": ["hamstrings", "glutes"],
+    "secondary_muscles": ["erector spinae", "grip", "upper back"],
+    "purpose": "Builds hamstring strength and hinge control through a long range of motion, the main posterior-chain strength lift of the block.",
+    "equipment": ["dumbbell"],
+    "difficulty": 2,
+    "instructions": "Hold dumbbells in front of your thighs, feet hip-width apart, knees softly bent. Push your hips straight back and slide the dumbbells down the front of your legs until you feel a strong hamstring stretch, usually around mid-shin. Drive your hips forward to stand, squeezing your glutes at the top.",
+    "form_cues": [
+      "Hips travel back, not down",
+      "Dumbbells stay in contact with the legs",
+      "Soft knees, fixed knee angle throughout",
+      "Stop where the hamstrings stop, not where the floor is"
+    ],
+    "common_errors": [
+      "Bending the knees more as the weight lowers, turning it into a squat",
+      "Rounding the back to chase extra depth",
+      "Letting the dumbbells drift forward away from the legs"
+    ],
+    "regressions": ["Kettlebell Deadlift", "RDL to a box set at knee height"],
+    "progressions": ["Single-Leg Dumbbell RDL", "Heavier dumbbells with a 3-second lowering tempo"],
+    "contraindications": ["avoid during acute low back flare-up"],
+    "demo_url": ""
+  },
+  {
+    "slug": "kettlebell-swing",
+    "name": "Kettlebell Swing",
+    "movement_pattern": "hinge",
+    "primary_muscles": ["glutes", "hamstrings"],
+    "secondary_muscles": ["core", "lats", "grip"],
+    "purpose": "Develops explosive hip power and doubles as low-impact conditioning that pairs well with boxing rounds.",
+    "equipment": ["kettlebell"],
+    "difficulty": 3,
+    "instructions": "Start with the kettlebell about a foot in front of you, hinge and hike it back high between your thighs. Snap your hips forward to float the bell to roughly chest height, arms relaxed. Let it fall, hinge as the upper arms reconnect with your ribs, and repeat rhythmically.",
+    "form_cues": [
+      "It is a hinge, not a squat",
+      "Hips drive the bell, arms just steer",
+      "Wait for the bell, then hinge late",
+      "Plank hard at the top: glutes and abs tight"
+    ],
+    "common_errors": [
+      "Lifting the bell with the arms and shoulders",
+      "Squatting under the bell instead of hinging",
+      "Hinging too early so the bell drops low and yanks the lower back",
+      "Leaning back at the top of the swing"
+    ],
+    "regressions": ["Kettlebell Deadlift", "Dead-stop swing (reset each rep)"],
+    "progressions": ["Heavier bell", "One-arm swing"],
+    "contraindications": ["avoid during acute low back flare-up"],
+    "demo_url": ""
+  },
+  {
+    "slug": "dumbbell-reverse-lunge",
+    "name": "Dumbbell Reverse Lunge",
+    "movement_pattern": "lunge",
+    "primary_muscles": ["quadriceps", "glutes"],
+    "secondary_muscles": ["hamstrings", "adductors", "core"],
+    "purpose": "The most knee-friendly lunge variation, chosen as the main single-leg strength builder of the program.",
+    "equipment": ["dumbbell", "bodyweight"],
+    "difficulty": 2,
+    "instructions": "Stand tall holding dumbbells at your sides. Step one foot back and lower until the back knee hovers just above the floor, front shin roughly vertical. Push through the front foot to return to standing, then repeat on the other side.",
+    "form_cues": [
+      "Step back, drop straight down",
+      "Front knee tracks over the second toe",
+      "Torso tall with a slight forward lean from the hips",
+      "Push the floor away with the front foot"
+    ],
+    "common_errors": [
+      "Stepping too short so the front knee shoots far past the toes",
+      "Pushing off the back foot instead of the front leg",
+      "Wobbling from a tightrope-narrow stance"
+    ],
+    "regressions": ["Bodyweight reverse lunge holding a wall or post", "Split squat (no stepping)"],
+    "progressions": ["Bulgarian Split Squat", "Front-racked reverse lunge"],
+    "contraindications": ["shorten range with acute knee pain"],
+    "demo_url": ""
+  },
+  {
+    "slug": "bulgarian-split-squat",
+    "name": "Bulgarian Split Squat",
+    "movement_pattern": "lunge",
+    "primary_muscles": ["quadriceps", "glutes"],
+    "secondary_muscles": ["adductors", "hamstrings", "core"],
+    "purpose": "The top-end single-leg strength progression, loading one leg heavily without heavy spinal loading.",
+    "equipment": ["dumbbell", "bench"],
+    "difficulty": 4,
+    "instructions": "Stand a couple of feet in front of a bench and place the top of your rear foot on it. Lower straight down until your front thigh is near parallel, keeping most of your weight on the front leg. Drive up through the front foot without bouncing off the back leg.",
+    "form_cues": [
+      "Front foot far enough forward that the shin stays near vertical",
+      "Back leg is a kickstand, front leg does the work",
+      "Lower under control, no bouncing at the bottom",
+      "Square hips forward"
+    ],
+    "common_errors": [
+      "Standing too close to the bench, cramping the front knee",
+      "Loading the back leg and turning it into a quad stretch",
+      "Losing balance from a narrow base"
+    ],
+    "regressions": ["Dumbbell Reverse Lunge", "Bodyweight split squat with hand support"],
+    "progressions": ["Heavier dumbbells", "Front-foot-elevated split squat for extra range"],
+    "contraindications": ["avoid with acute knee pain", "skip if balance issues make it unsafe"],
+    "demo_url": ""
+  },
+  {
+    "slug": "lateral-lunge",
+    "name": "Lateral Lunge",
+    "movement_pattern": "lunge",
+    "primary_muscles": ["adductors", "glutes"],
+    "secondary_muscles": ["quadriceps", "hamstrings"],
+    "purpose": "Adds frontal-plane strength and adductor length, supporting hip mobility work and lateral movement in boxing footwork.",
+    "equipment": ["bodyweight", "dumbbell"],
+    "difficulty": 2,
+    "instructions": "From a tall stance, step wide to one side and sit your hips back over the stepping leg, keeping the other leg straight with its foot flat. Lower until you feel a stretch along the inner thigh of the straight leg. Push off the bent leg to return to the start.",
+    "form_cues": [
+      "Sit back into the hip, not down onto the knee",
+      "Both feet point mostly forward",
+      "Trailing leg stays straight with the foot flat",
+      "Chest up, back flat as hips reach back"
+    ],
+    "common_errors": [
+      "Bent knee caving inward",
+      "Heel of the working foot lifting",
+      "Rounding the spine to get lower instead of sitting back"
+    ],
+    "regressions": ["Shorter side step", "Cossack squat holding a support"],
+    "progressions": ["Goblet lateral lunge", "Cossack squat (full depth)"],
+    "contraindications": ["ease range with groin strain history"],
+    "demo_url": ""
+  },
+  {
+    "slug": "push-up",
+    "name": "Push-Up",
+    "movement_pattern": "horizontal_push",
+    "primary_muscles": ["chest", "triceps"],
+    "secondary_muscles": ["anterior deltoids", "core", "serratus anterior"],
+    "purpose": "The baseline horizontal press, trains pressing and trunk stiffness together and scales anywhere without equipment.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 2,
+    "instructions": "Start in a straight-line plank with hands slightly wider than shoulders. Lower your whole body as one unit until your chest is about a fist's height from the floor, elbows at roughly 45 degrees from your torso. Press back up to a full lockout, pushing the floor away.",
+    "form_cues": [
+      "Body moves as one rigid plank",
+      "Elbows about 45 degrees, not flared to 90",
+      "Chest leads, hips do not sag or pike",
+      "Full lockout with shoulder blades spreading at the top"
+    ],
+    "common_errors": [
+      "Hips sagging as reps fatigue",
+      "Half range: not reaching the bottom or the top",
+      "Head pecking forward while the chest stays high",
+      "Hands too far forward of the shoulders"
+    ],
+    "regressions": ["Incline push-up (hands on bench)", "Push-up to knees"],
+    "progressions": ["Feet-Elevated Push-Up", "Banded push-up (band across the back)"],
+    "contraindications": ["modify hand position with wrist pain"],
+    "demo_url": ""
+  },
+  {
+    "slug": "dumbbell-bench-press",
+    "name": "Dumbbell Bench Press",
+    "movement_pattern": "horizontal_push",
+    "primary_muscles": ["chest", "triceps"],
+    "secondary_muscles": ["anterior deltoids"],
+    "purpose": "The main loaded horizontal press for building upper-body pushing strength beyond what push-ups provide.",
+    "equipment": ["dumbbell", "bench"],
+    "difficulty": 3,
+    "instructions": "Lie on a bench with a dumbbell in each hand at chest level, feet planted on the floor. Press the dumbbells up until your arms are straight over your mid-chest. Lower under control until the dumbbells reach the sides of your chest, then press again.",
+    "form_cues": [
+      "Shoulder blades pinched down and back into the bench",
+      "Wrists stacked directly over elbows",
+      "Slight arch, ribs down, feet driving into the floor",
+      "Lower to a comfortable stretch, press to full lockout"
+    ],
+    "common_errors": [
+      "Elbows flaring straight out to the sides",
+      "Bouncing the dumbbells at the bottom",
+      "Feet dancing or lifting off the floor",
+      "Dumbbells drifting toward the face at lockout"
+    ],
+    "regressions": ["Dumbbell floor press", "Lighter dumbbells with a slow eccentric"],
+    "progressions": ["Heavier dumbbells", "Single-arm dumbbell bench press"],
+    "contraindications": ["limit depth with anterior shoulder pain"],
+    "demo_url": ""
+  },
+  {
+    "slug": "feet-elevated-push-up",
+    "name": "Feet-Elevated Push-Up",
+    "movement_pattern": "horizontal_push",
+    "primary_muscles": ["upper chest", "triceps"],
+    "secondary_muscles": ["anterior deltoids", "core", "serratus anterior"],
+    "purpose": "Progresses the push-up by shifting load toward the upper chest and shoulders while demanding more trunk control.",
+    "equipment": ["bodyweight", "bench", "box"],
+    "difficulty": 3,
+    "instructions": "Set your feet on a bench or box and hands on the floor in a plank position. Lower until your forehead is just above the floor, keeping the body in one line. Press back to full lockout without letting the hips pike.",
+    "form_cues": [
+      "Squeeze glutes hard to keep hips level",
+      "Hands slightly ahead of the shoulders",
+      "Lower to the floor, not to a half rep",
+      "Tuck chin slightly so the head does not lead"
+    ],
+    "common_errors": [
+      "Piking the hips to make the rep easier",
+      "Cutting depth as the angle gets harder",
+      "Flaring elbows out wide"
+    ],
+    "regressions": ["Push-Up", "Lower elevation (low box)"],
+    "progressions": ["Higher elevation", "Banded feet-elevated push-up"],
+    "contraindications": ["avoid with acute shoulder impingement"],
+    "demo_url": ""
+  },
+  {
+    "slug": "standing-dumbbell-overhead-press",
+    "name": "Standing Dumbbell Overhead Press",
+    "movement_pattern": "vertical_push",
+    "primary_muscles": ["deltoids", "triceps"],
+    "secondary_muscles": ["upper chest", "core", "serratus anterior"],
+    "purpose": "The primary vertical press, building overhead strength while the standing position trains full-body bracing.",
+    "equipment": ["dumbbell"],
+    "difficulty": 3,
+    "instructions": "Stand with dumbbells at shoulder height, palms facing forward or slightly in, feet hip-width. Brace your trunk and press the dumbbells overhead until your biceps are near your ears and arms are locked out. Lower under control back to the shoulders.",
+    "form_cues": [
+      "Squeeze glutes and abs so the ribs stay down",
+      "Press up and slightly back to finish over the shoulders",
+      "Wrists stacked over elbows the whole way",
+      "Head moves slightly through at lockout"
+    ],
+    "common_errors": [
+      "Leaning back and arching the lower back to press",
+      "Stopping short of full lockout",
+      "Flaring the wrists back under load",
+      "Using leg drive on strict reps"
+    ],
+    "regressions": ["Half-kneeling single-arm press", "Seated dumbbell press"],
+    "progressions": ["Heavier dumbbells", "Single-arm dumbbell press"],
+    "contraindications": ["avoid with acute shoulder impingement", "modify with limited overhead mobility until t-spine work restores range"],
+    "demo_url": ""
+  },
+  {
+    "slug": "pike-push-up",
+    "name": "Pike Push-Up",
+    "movement_pattern": "vertical_push",
+    "primary_muscles": ["deltoids", "triceps"],
+    "secondary_muscles": ["upper chest", "serratus anterior"],
+    "purpose": "A bodyweight vertical press for home sessions and a stepping stone toward more advanced overhead pressing.",
+    "equipment": ["bodyweight", "floor", "box"],
+    "difficulty": 3,
+    "instructions": "From a push-up position, walk your feet in and lift your hips high so your torso points toward the floor like an inverted V. Bend your elbows and lower the top of your head toward a spot just in front of your hands. Press back up until your arms are straight, keeping hips high throughout.",
+    "form_cues": [
+      "Hips stay high, torso as vertical as possible",
+      "Head travels forward of the hands, like a triangle",
+      "Elbows track back at about 45 degrees",
+      "Push the floor away until elbows fully straighten"
+    ],
+    "common_errors": [
+      "Letting the hips drop, turning it into a decline push-up",
+      "Lowering the head straight between the hands and jamming the wrists",
+      "Very short range of motion"
+    ],
+    "regressions": ["Push-Up", "Pike push-up with hands elevated on a box"],
+    "progressions": ["Feet-elevated pike push-up", "Wall-supported handstand push-up"],
+    "contraindications": ["avoid with acute shoulder impingement", "caution with wrist pain"],
+    "demo_url": ""
+  },
+  {
+    "slug": "one-arm-dumbbell-row",
+    "name": "One-Arm Dumbbell Row",
+    "movement_pattern": "horizontal_pull",
+    "primary_muscles": ["lats", "rhomboids"],
+    "secondary_muscles": ["biceps", "rear deltoids", "core"],
+    "purpose": "The heaviest rowing option in the library, balancing all the pressing volume and building mid-back thickness.",
+    "equipment": ["dumbbell", "bench"],
+    "difficulty": 2,
+    "instructions": "Place one hand and the same-side knee on a bench, other foot planted, back flat and parallel to the floor. Row the dumbbell from a full hang up toward your hip, letting the elbow graze your ribs. Lower with control to a full stretch at the bottom.",
+    "form_cues": [
+      "Pull the elbow to the hip, not the hand to the shoulder",
+      "Let the shoulder blade glide: reach at the bottom, squeeze at the top",
+      "Hips and shoulders stay square to the floor",
+      "Neck neutral, eyes on the bench"
+    ],
+    "common_errors": [
+      "Rotating the torso open to heave the weight up",
+      "Shrugging the shoulder toward the ear",
+      "Cutting the bottom stretch short",
+      "Jerking with momentum instead of pulling smoothly"
+    ],
+    "regressions": ["Lighter dumbbell", "Standing Band Row"],
+    "progressions": ["Heavier dumbbell with a pause at the top", "Chest-Supported Dumbbell Row"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "chest-supported-dumbbell-row",
+    "name": "Chest-Supported Dumbbell Row",
+    "movement_pattern": "horizontal_pull",
+    "primary_muscles": ["rhomboids", "mid traps", "lats"],
+    "secondary_muscles": ["rear deltoids", "biceps"],
+    "purpose": "Rows with zero lower-back demand, isolating the upper back and enforcing strict technique on higher-volume days.",
+    "equipment": ["dumbbell", "bench"],
+    "difficulty": 2,
+    "instructions": "Set a bench to a low incline and lie chest-down on it with a dumbbell in each hand hanging straight down. Row both dumbbells up toward your lower ribs, squeezing your shoulder blades together. Lower slowly until your arms are fully extended and shoulder blades spread.",
+    "form_cues": [
+      "Chest stays glued to the bench",
+      "Squeeze the shoulder blades together at the top",
+      "Full stretch at the bottom of every rep",
+      "Elbows track close to the body, about 45 degrees"
+    ],
+    "common_errors": [
+      "Lifting the chest off the bench to cheat the weight up",
+      "Short, choppy reps without full extension",
+      "Shrugging into the neck instead of pulling the blades back"
+    ],
+    "regressions": ["Lighter dumbbells", "Standing Band Row"],
+    "progressions": ["Pause each rep at the top for 2 seconds", "One-Arm Dumbbell Row"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "standing-band-row",
+    "name": "Standing Band Row",
+    "movement_pattern": "horizontal_pull",
+    "primary_muscles": ["rhomboids", "mid traps"],
+    "secondary_muscles": ["lats", "biceps", "rear deltoids"],
+    "purpose": "A joint-friendly, high-rep pulling option for warm-ups, home sessions, and posture work between pressing days.",
+    "equipment": ["band"],
+    "difficulty": 1,
+    "instructions": "Anchor a band at chest height and step back until there is tension with your arms extended. Pull the handles toward your lower ribs, driving your elbows behind you and squeezing your shoulder blades. Return slowly, letting your shoulder blades reach forward at the end.",
+    "form_cues": [
+      "Stand tall, ribs stacked over hips",
+      "Lead the pull with the shoulder blades",
+      "Elbows finish just behind the torso",
+      "Resist the band on the way back out"
+    ],
+    "common_errors": [
+      "Leaning back with each rep to add fake range",
+      "Shrugging the shoulders up during the pull",
+      "Letting the band snap the arms back instead of controlling the return"
+    ],
+    "regressions": ["Lighter band", "Seated band row with legs extended"],
+    "progressions": ["Heavier band or double band", "Single-arm band row with anti-rotation hold"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "pull-up",
+    "name": "Pull-Up",
+    "movement_pattern": "vertical_pull",
+    "primary_muscles": ["lats", "biceps"],
+    "secondary_muscles": ["rhomboids", "forearms", "core"],
+    "purpose": "The benchmark vertical pull, a full-bodyweight strength standard this block trains directly and tracks over the four weeks.",
+    "equipment": ["pullup_bar", "bodyweight"],
+    "difficulty": 4,
+    "instructions": "Hang from the bar with an overhand grip slightly wider than shoulders, arms fully extended. Pull your chest toward the bar by driving your elbows down and back until your chin clears the bar. Lower under control to a full hang before the next rep.",
+    "form_cues": [
+      "Start each rep from a dead hang",
+      "Pull the elbows down toward the ribs",
+      "Chest to bar, not chin poked over it",
+      "Ribs down, legs quiet, no swinging"
+    ],
+    "common_errors": [
+      "Kipping or swinging for momentum",
+      "Stopping with arms half bent at the bottom",
+      "Craning the neck to sneak the chin over",
+      "Losing body tension so the hips swing"
+    ],
+    "regressions": ["Band-Assisted Pull-Up", "Slow negative pull-ups (jump up, lower for 5 seconds)"],
+    "progressions": ["Added weight via dumbbell between the feet", "Chest-to-bar pull-up"],
+    "contraindications": ["avoid dead-hang starts with acute elbow tendinopathy"],
+    "demo_url": ""
+  },
+  {
+    "slug": "band-assisted-pull-up",
+    "name": "Band-Assisted Pull-Up",
+    "movement_pattern": "vertical_pull",
+    "primary_muscles": ["lats", "biceps"],
+    "secondary_muscles": ["rhomboids", "forearms", "core"],
+    "purpose": "Lets pull-ups be trained for full sets with clean form while strength builds toward more unassisted reps.",
+    "equipment": ["pullup_bar", "band"],
+    "difficulty": 3,
+    "instructions": "Loop a band over the bar and place one knee or foot in the loop. Perform pull-ups exactly as the unassisted version: dead hang start, chest toward the bar, controlled lowering. Choose the lightest band that still allows all planned reps with good form.",
+    "form_cues": [
+      "Treat every rep like a real pull-up",
+      "Full hang at the bottom, chin clearly over at the top",
+      "Keep the banded leg steady so it does not bounce",
+      "Control the descent, do not ride the band down"
+    ],
+    "common_errors": [
+      "Using a heavier band than needed and stalling progress",
+      "Bouncing out of the bottom off band recoil",
+      "Shortening range at the top as sets fatigue"
+    ],
+    "regressions": ["Thicker band", "Kneeling Band Lat Pulldown"],
+    "progressions": ["Thinner band", "Pull-Up"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "kneeling-band-lat-pulldown",
+    "name": "Kneeling Band Lat Pulldown",
+    "movement_pattern": "vertical_pull",
+    "primary_muscles": ["lats"],
+    "secondary_muscles": ["biceps", "rhomboids"],
+    "purpose": "A high-rep vertical pull for lat volume and lat-engagement practice on days the bar is not available or arms are fried.",
+    "equipment": ["band", "pullup_bar"],
+    "difficulty": 1,
+    "instructions": "Anchor a band overhead, such as over the pull-up bar, and kneel below it holding the ends with arms extended overhead. Pull your elbows down and slightly back until your hands reach shoulder level, feeling the lats contract. Return slowly to a full overhead stretch.",
+    "form_cues": [
+      "Pull elbows to the back pockets",
+      "Tall kneeling posture, ribs down",
+      "Feel the armpit muscles do the work",
+      "Slow stretch back to the top"
+    ],
+    "common_errors": [
+      "Leaning back and turning it into a row",
+      "Pulling with the hands and biceps only",
+      "Rushing the return and losing tension"
+    ],
+    "regressions": ["Lighter band", "Single-arm band pulldown"],
+    "progressions": ["Heavier band", "Band-Assisted Pull-Up"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "farmers-carry",
+    "name": "Farmer's Carry",
+    "movement_pattern": "carry",
+    "primary_muscles": ["grip", "traps"],
+    "secondary_muscles": ["core", "glutes", "upper back"],
+    "purpose": "Trains grip, posture, and total-body work capacity in one drill and finishes sessions without beating up joints.",
+    "equipment": ["dumbbell", "kettlebell"],
+    "difficulty": 2,
+    "instructions": "Deadlift a heavy dumbbell or kettlebell into each hand and stand tall. Walk with short, controlled steps for a set distance or time, keeping shoulders level and ribs stacked over hips. Set the weights down with a hinge, not a rounded back.",
+    "form_cues": [
+      "Walk tall, as if a string pulls the crown of your head up",
+      "Crush the handles",
+      "Shoulders down and back, not shrugged",
+      "Smooth heel-to-toe steps, no waddling"
+    ],
+    "common_errors": [
+      "Leaning forward and rushing the steps",
+      "Letting the weights rest against the thighs",
+      "Rounding the back when picking up or setting down"
+    ],
+    "regressions": ["Lighter load", "Shorter carry distance with more sets"],
+    "progressions": ["Heavier load or longer distance", "Suitcase Carry"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "suitcase-carry",
+    "name": "Suitcase Carry",
+    "movement_pattern": "carry",
+    "primary_muscles": ["obliques", "grip"],
+    "secondary_muscles": ["glute medius", "traps", "quadratus lumborum"],
+    "purpose": "A one-sided carry that hammers lateral core stability, directly supporting punching power transfer and single-leg work.",
+    "equipment": ["kettlebell", "dumbbell"],
+    "difficulty": 2,
+    "instructions": "Pick up one heavy kettlebell or dumbbell in one hand and stand perfectly level, as if carrying a suitcase. Walk a set distance keeping your torso upright with no lean toward or away from the weight. Switch hands and repeat the same distance.",
+    "form_cues": [
+      "Stay so level no one could tell which hand is loaded",
+      "Opposite-side obliques do the work",
+      "Free arm relaxed, not winged out for balance",
+      "Slow, deliberate steps"
+    ],
+    "common_errors": [
+      "Leaning away from the weight",
+      "Hiking the loaded-side shoulder up",
+      "Walking too fast to feel the core working"
+    ],
+    "regressions": ["Lighter load", "Suitcase hold (stand in place)"],
+    "progressions": ["Heavier load", "Overhead single-arm carry"],
+    "contraindications": ["avoid heavy loading during acute low back flare-up"],
+    "demo_url": ""
+  },
+  {
+    "slug": "dumbbell-hip-thrust",
+    "name": "Dumbbell Hip Thrust",
+    "movement_pattern": "glute",
+    "primary_muscles": ["glutes"],
+    "secondary_muscles": ["hamstrings", "core"],
+    "purpose": "The main direct glute strength lift, loading full hip extension harder than squats or hinges can.",
+    "equipment": ["dumbbell", "bench", "floor"],
+    "difficulty": 2,
+    "instructions": "Sit on the floor with your upper back against a bench and a dumbbell across your hips. Plant your feet so your shins are vertical at the top, then drive through your heels until your hips are fully extended and your torso is parallel to the floor. Lower your hips a few inches under control and repeat.",
+    "form_cues": [
+      "Chin tucked, eyes forward over the knees",
+      "Ribs down; finish with glutes, not lower back arch",
+      "Shins vertical at the top",
+      "One-second squeeze at full lockout"
+    ],
+    "common_errors": [
+      "Hyperextending the lower back instead of finishing with the glutes",
+      "Feet too far forward so hamstrings take over, or too close so quads take over",
+      "Bouncing reps without a lockout squeeze"
+    ],
+    "regressions": ["Glute bridge on the floor", "Bodyweight hip thrust"],
+    "progressions": ["Heavier dumbbell", "Single-leg hip thrust"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "banded-lateral-walk",
+    "name": "Banded Lateral Walk",
+    "movement_pattern": "glute",
+    "primary_muscles": ["glute medius"],
+    "secondary_muscles": ["glute maximus", "tensor fasciae latae"],
+    "purpose": "Strengthens the lateral hip stabilizers that control knee tracking in squats and lunges and support the restricted right hip.",
+    "equipment": ["band"],
+    "difficulty": 1,
+    "instructions": "Place a loop band just above your knees or around your ankles and sit into a quarter-squat athletic stance. Step sideways with one foot, then follow with the other, keeping constant tension on the band. Take 8 to 12 steps one way, then lead with the other leg coming back.",
+    "form_cues": [
+      "Stay low the whole set, no bobbing up and down",
+      "Push the knee out into the band on every step",
+      "Toes point forward, not out",
+      "Controlled trailing step: never let the feet clap together"
+    ],
+    "common_errors": [
+      "Standing up taller with each step",
+      "Letting knees cave inward against the band",
+      "Dragging the trailing foot and losing band tension"
+    ],
+    "regressions": ["Band above knees instead of ankles", "Standing band hip abduction in place"],
+    "progressions": ["Band around ankles", "Monster walk (diagonal forward steps)"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "front-plank",
+    "name": "Front Plank",
+    "movement_pattern": "core_anti_extension",
+    "primary_muscles": ["rectus abdominis", "transverse abdominis"],
+    "secondary_muscles": ["obliques", "glutes", "shoulders"],
+    "purpose": "Teaches the braced, neutral trunk position that every loaded lift and every punch in this program relies on.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 1,
+    "instructions": "Set up on your forearms and toes with elbows under shoulders and body in one straight line from head to heels. Squeeze your glutes, tuck your pelvis slightly, and breathe steadily while holding the position. Hold for time without letting the hips sag or pike.",
+    "form_cues": [
+      "Squeeze glutes and quads hard",
+      "Tuck the pelvis slightly, ribs toward hips",
+      "Push the floor away through the forearms",
+      "Breathe: short breaths behind a firm brace"
+    ],
+    "common_errors": [
+      "Hips sagging into lower back extension",
+      "Hips piked high to make the hold easier",
+      "Holding the breath for the entire set",
+      "Head hanging or craned up"
+    ],
+    "regressions": ["Incline plank on a bench", "Shorter holds, more sets"],
+    "progressions": ["Long-lever plank (elbows forward of shoulders)", "Bear Plank"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "dead-bug",
+    "name": "Dead Bug",
+    "movement_pattern": "core_anti_extension",
+    "primary_muscles": ["transverse abdominis", "rectus abdominis"],
+    "secondary_muscles": ["hip flexors", "obliques"],
+    "purpose": "Trains keeping a flat, braced lower back while the limbs move, the exact skill needed for overhead pressing without arching.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 1,
+    "instructions": "Lie on your back with arms pointing at the ceiling and hips and knees bent to 90 degrees. Press your lower back gently into the floor, then slowly extend one arm overhead and the opposite leg out until they hover above the floor. Return and switch sides without letting the lower back arch.",
+    "form_cues": [
+      "Lower back stays pressed into the floor the entire time",
+      "Exhale fully as the limbs extend",
+      "Move slowly, about 3 seconds out",
+      "Reach the heel away, do not just drop the leg"
+    ],
+    "common_errors": [
+      "Lower back arching off the floor as the leg extends",
+      "Moving fast and using momentum",
+      "Extending same-side arm and leg instead of opposites"
+    ],
+    "regressions": ["Legs only (arms stay up)", "Heel taps with knees bent"],
+    "progressions": ["Hold a light band anchored overhead for lat tension", "Slower tempo with a pause at full reach"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "bear-plank",
+    "name": "Bear Plank",
+    "movement_pattern": "core_anti_extension",
+    "primary_muscles": ["transverse abdominis", "rectus abdominis"],
+    "secondary_muscles": ["quadriceps", "shoulders", "serratus anterior"],
+    "purpose": "A harder anti-extension hold that also loads the shoulders and prepares the trunk for crawling and dynamic core work.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 2,
+    "instructions": "Start on hands and knees with wrists under shoulders and knees under hips. Tuck your toes and lift your knees one inch off the floor, keeping your back perfectly flat. Hold for time, breathing steadily, with knees hovering just off the ground.",
+    "form_cues": [
+      "Knees hover one inch, no higher",
+      "Back flat enough to balance a cup of water",
+      "Push the floor away between the shoulder blades",
+      "Ribs down, tailbone slightly tucked"
+    ],
+    "common_errors": [
+      "Hips rising well above shoulder height",
+      "Lower back sagging into extension",
+      "Weight shifted back onto the knees instead of spread between hands and toes"
+    ],
+    "regressions": ["Front Plank", "Quadruped hold with knees down"],
+    "progressions": ["Bear crawl (forward and backward)", "Bear plank shoulder taps"],
+    "contraindications": ["caution with wrist pain"],
+    "demo_url": ""
+  },
+  {
+    "slug": "band-pallof-press",
+    "name": "Band Pallof Press",
+    "movement_pattern": "core_anti_rotation",
+    "primary_muscles": ["obliques", "transverse abdominis"],
+    "secondary_muscles": ["glutes", "shoulders"],
+    "purpose": "The core anti-rotation staple, building the trunk stiffness that transfers hip rotation into punches instead of leaking it.",
+    "equipment": ["band"],
+    "difficulty": 2,
+    "instructions": "Anchor a band at chest height and stand sideways to it, holding the band with both hands at your sternum. Press your hands straight out until your arms are extended, resisting the band's pull to twist you toward the anchor. Hold for a beat, return to the chest, and finish the set before facing the other way.",
+    "form_cues": [
+      "Press straight out, dead center of the chest",
+      "Hips and shoulders stay square, do not let the band win",
+      "Soft knees, glutes on",
+      "Exhale as the arms extend"
+    ],
+    "common_errors": [
+      "Torso rotating toward the anchor as the arms extend",
+      "Standing too close so there is no real tension",
+      "Shrugging or leaning away instead of bracing"
+    ],
+    "regressions": ["Tall-kneeling Pallof press", "Lighter band"],
+    "progressions": ["Pallof press with overhead raise", "Split-stance Pallof press"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "renegade-row",
+    "name": "Renegade Row",
+    "movement_pattern": "core_anti_rotation",
+    "primary_muscles": ["obliques", "lats"],
+    "secondary_muscles": ["rhomboids", "triceps", "shoulders"],
+    "purpose": "Combines a row with a moving anti-rotation plank, an efficient two-for-one on time-crunched full-body days.",
+    "equipment": ["dumbbell", "floor"],
+    "difficulty": 3,
+    "instructions": "Set up in a push-up position gripping two dumbbells, feet wider than hips. Row one dumbbell to your ribs while the rest of your body stays motionless, then lower it and row the other side. Alternate with slow, deliberate reps.",
+    "form_cues": [
+      "Hips stay level, imagine headlights on your hips pointing at the floor",
+      "Push hard into the supporting dumbbell",
+      "Wide feet for a stable base",
+      "Row slow: one second up, one second down"
+    ],
+    "common_errors": [
+      "Hips rocking side to side with each row",
+      "Piking the hips to make the row easier",
+      "Yanking the dumbbell instead of pulling smoothly"
+    ],
+    "regressions": ["Bear plank shoulder taps", "Renegade row from knees"],
+    "progressions": ["Heavier dumbbells", "Renegade row with push-up between reps"],
+    "contraindications": ["caution with wrist pain", "use hexagonal dumbbells only; round ones roll"],
+    "demo_url": ""
+  },
+  {
+    "slug": "hanging-knee-raise",
+    "name": "Hanging Knee Raise",
+    "movement_pattern": "core_flexion",
+    "primary_muscles": ["rectus abdominis", "hip flexors"],
+    "secondary_muscles": ["obliques", "grip", "lats"],
+    "purpose": "Loads trunk flexion from the bar while building the grip and hang tolerance that supports the pull-up goal.",
+    "equipment": ["pullup_bar"],
+    "difficulty": 3,
+    "instructions": "Hang from the pull-up bar with arms straight and body still. Curl your knees up toward your chest, letting your pelvis tuck under at the top so the abs, not just the hip flexors, do the work. Lower slowly to a dead hang without swinging.",
+    "form_cues": [
+      "Tuck the pelvis at the top, tailbone curls forward",
+      "Knees to chest, not just thighs to parallel",
+      "Lower for 2 to 3 seconds",
+      "Kill the swing between reps"
+    ],
+    "common_errors": [
+      "Swinging and using momentum",
+      "Stopping at hip height so only the hip flexors work",
+      "Dropping the legs fast and losing control"
+    ],
+    "regressions": ["Reverse Crunch", "Captain's-chair style knee raise with forearms supported"],
+    "progressions": ["Hanging straight-leg raise", "Toes-to-bar"],
+    "contraindications": ["avoid with acute shoulder pain that limits hanging"],
+    "demo_url": ""
+  },
+  {
+    "slug": "reverse-crunch",
+    "name": "Reverse Crunch",
+    "movement_pattern": "core_flexion",
+    "primary_muscles": ["rectus abdominis"],
+    "secondary_muscles": ["obliques", "hip flexors"],
+    "purpose": "A floor-based flexion drill that trains the lower abs with posterior pelvic tilt, without neck or lower back strain.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 2,
+    "instructions": "Lie on your back with knees bent to 90 degrees and shins parallel to the floor, arms at your sides. Curl your pelvis up so your hips lift a few inches and your knees travel toward your chest. Lower slowly until your tailbone touches down, keeping tension in the abs.",
+    "form_cues": [
+      "Curl the pelvis, do not swing the legs",
+      "Exhale as the hips lift",
+      "Lower one vertebra at a time",
+      "Hands press lightly into the floor, not levering"
+    ],
+    "common_errors": [
+      "Swinging the legs for momentum instead of curling the spine",
+      "Letting the feet drop and the back arch between reps",
+      "Pushing hard through the arms to hoist the hips"
+    ],
+    "regressions": ["Lying knee tuck without the hip lift", "Smaller range of motion"],
+    "progressions": ["Slow 3-second lowering", "Hanging Knee Raise"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "90-90-hip-switch",
+    "name": "90/90 Hip Switch",
+    "movement_pattern": "hip_mobility",
+    "primary_muscles": ["hip external rotators", "hip internal rotators"],
+    "secondary_muscles": ["glutes", "adductors"],
+    "purpose": "Trains active internal and external hip rotation in both hips at once, the cornerstone drill for the right-hip restriction.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 2,
+    "instructions": "Sit on the floor with one leg bent 90 degrees in front of you and the other bent 90 degrees to the side behind you. Keeping your chest tall, lift both knees and rotate them together to the other side until the legs swap positions. Move slowly with control, pausing in each 90/90 position.",
+    "form_cues": [
+      "Sit as tall as possible, hands off the floor if you can",
+      "Knees travel together like windshield wipers",
+      "Pause and press the knees gently toward the floor in each position",
+      "Let the restricted side move through less range rather than slumping"
+    ],
+    "common_errors": [
+      "Slumping the torso and rounding the back to fake range",
+      "Using hands to drag the body around",
+      "Rushing through the transition without controlling the rotation"
+    ],
+    "regressions": ["Sit on a low box or cushion to raise the hips", "Support with hands behind you"],
+    "progressions": ["90/90 switch with hands behind head", "90/90 hover (lift both legs briefly mid-switch)"],
+    "contraindications": ["stay in a pain-free range with the restricted right hip"],
+    "demo_url": ""
+  },
+  {
+    "slug": "pigeon-pose",
+    "name": "Pigeon Pose",
+    "movement_pattern": "hip_mobility",
+    "primary_muscles": ["glutes", "hip external rotators"],
+    "secondary_muscles": ["hip flexors", "piriformis"],
+    "purpose": "The end-goal deep external rotation stretch for this block; the right hip works toward it gradually via its regressions.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 3,
+    "instructions": "From hands and knees, bring one knee forward behind your wrist and angle that shin across your body, extending the other leg straight behind you. Square your hips toward the floor and lower your torso over the front shin as far as comfortable. Breathe slowly and hold, then switch sides.",
+    "form_cues": [
+      "Hips square, do not let the back hip flop open",
+      "Support under the front hip with a cushion if it hovers",
+      "Front foot flexed to protect the knee",
+      "Sink with the exhale, never bounce"
+    ],
+    "common_errors": [
+      "Rolling onto the outside of the front hip so the stretch disappears",
+      "Forcing the front shin parallel when the hip is not ready",
+      "Holding the breath and bracing against the stretch"
+    ],
+    "regressions": ["Figure-4 Supine Stretch", "Pigeon with a cushion under the front hip", "Seated figure-4 in a chair"],
+    "progressions": ["Deeper forward fold over the shin", "Front shin closer to parallel with the hips"],
+    "contraindications": ["do not force range on the restricted right hip", "avoid with acute knee pain in the front leg"],
+    "demo_url": ""
+  },
+  {
+    "slug": "figure-4-supine-stretch",
+    "name": "Figure-4 Supine Stretch",
+    "movement_pattern": "hip_mobility",
+    "primary_muscles": ["glutes", "piriformis"],
+    "secondary_muscles": ["hip external rotators"],
+    "purpose": "The pigeon regression prescribed for the restricted right hip: the same stretch with the load and angle fully controllable.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 1,
+    "instructions": "Lie on your back with knees bent and cross one ankle over the opposite thigh, just above the knee. Reach through and grab behind the supporting thigh, then gently pull it toward your chest until you feel a stretch in the crossed-leg glute. Hold and breathe, easing deeper on each exhale.",
+    "form_cues": [
+      "Head and shoulders relaxed on the floor",
+      "Push the crossed knee gently away as you pull the thigh in",
+      "Flex the crossed foot",
+      "Ease in with breath, back off if the hip pinches"
+    ],
+    "common_errors": [
+      "Yanking the leg in and holding the breath",
+      "Lifting the head and shoulders off the floor, adding neck tension",
+      "Letting the crossed knee collapse inward"
+    ],
+    "regressions": ["Cross the ankle without pulling the thigh", "Same stretch seated in a chair"],
+    "progressions": ["Deeper pull toward the chest", "Pigeon Pose"],
+    "contraindications": ["stop short of any pinching in the front of the right hip"],
+    "demo_url": ""
+  },
+  {
+    "slug": "wall-ankle-dorsiflexion",
+    "name": "Wall Ankle Dorsiflexion (Knee-to-Wall)",
+    "movement_pattern": "ankle_mobility",
+    "primary_muscles": ["soleus", "ankle joint capsule"],
+    "secondary_muscles": ["gastrocnemius"],
+    "purpose": "Restores the ankle dorsiflexion that squat depth and heels-down positions depend on, with a built-in measurable test.",
+    "equipment": ["bodyweight", "wall"],
+    "difficulty": 1,
+    "instructions": "Face a wall with one foot a few inches away, toes pointing straight at it. Drive your knee forward over your toes to touch the wall while keeping your heel flat on the floor. If it touches easily, move the foot back an inch; work at the farthest distance where the heel still stays down.",
+    "form_cues": [
+      "Heel glued to the floor, that is the whole drill",
+      "Knee tracks over the second toe",
+      "Push the knee slightly outward, never inward",
+      "Note your foot distance to track progress week to week"
+    ],
+    "common_errors": [
+      "Heel lifting to reach the wall",
+      "Knee diving inward toward the big toe",
+      "Foot angled out to fake extra range"
+    ],
+    "regressions": ["Start closer to the wall", "Seated ankle rocks with less load"],
+    "progressions": ["Move the foot farther back", "Half-Kneeling Weighted Ankle Rock"],
+    "contraindications": ["avoid pushing through pinching at the front of the ankle"],
+    "demo_url": ""
+  },
+  {
+    "slug": "half-kneeling-weighted-ankle-rock",
+    "name": "Half-Kneeling Weighted Ankle Rock",
+    "movement_pattern": "ankle_mobility",
+    "primary_muscles": ["soleus", "ankle joint capsule"],
+    "secondary_muscles": ["gastrocnemius", "tibialis anterior"],
+    "purpose": "Progresses ankle mobility by adding load, producing longer-lasting range gains than unloaded rocking alone.",
+    "equipment": ["kettlebell", "floor"],
+    "difficulty": 2,
+    "instructions": "Kneel with one foot flat in front of you and rest a kettlebell on top of that knee. Rock forward, driving the knee over the toes as far as the flat heel allows, hold two seconds, and rock back. Keep the movement slow and repeat for reps before switching sides.",
+    "form_cues": [
+      "Heel stays welded to the floor",
+      "The weight assists; do not fight it, sink with it",
+      "Two-second pause at end range",
+      "Knee over the outside of the foot, not collapsing in"
+    ],
+    "common_errors": [
+      "Heel peeling up under the load",
+      "Bouncing quickly instead of pausing at end range",
+      "Arch collapsing as the knee drives forward"
+    ],
+    "regressions": ["Wall Ankle Dorsiflexion (Knee-to-Wall)", "No weight, hands on knee only"],
+    "progressions": ["Heavier kettlebell", "Elevate the toes slightly on a small plate"],
+    "contraindications": ["avoid pushing through pinching at the front of the ankle"],
+    "demo_url": ""
+  },
+  {
+    "slug": "open-book-stretch",
+    "name": "Open Book Stretch",
+    "movement_pattern": "thoracic_mobility",
+    "primary_muscles": ["thoracic spine rotators"],
+    "secondary_muscles": ["chest", "obliques", "shoulders"],
+    "purpose": "Restores thoracic rotation, which feeds directly into punching mechanics and takes rotational stress off the lower back.",
+    "equipment": ["bodyweight", "floor"],
+    "difficulty": 1,
+    "instructions": "Lie on your side with hips and knees bent to 90 degrees and both arms extended together in front of your chest. Keeping the knees glued down, sweep the top arm up and across to the other side, letting your chest rotate open toward the ceiling. Follow the moving hand with your eyes, pause, and return.",
+    "form_cues": [
+      "Knees stay stacked and pinned to the floor",
+      "Rotate from the rib cage, not by flinging the arm",
+      "Eyes follow the hand to bring the neck along",
+      "Exhale into the open position and let the chest sink"
+    ],
+    "common_errors": [
+      "Top knee lifting so rotation comes from the lower back",
+      "Moving only the arm while the ribs stay closed",
+      "Rushing reps without pausing in the open position"
+    ],
+    "regressions": ["Place a cushion between the knees", "Smaller arc of rotation"],
+    "progressions": ["2 to 3 breath hold at end range", "Quadruped Thread-the-Needle"],
+    "contraindications": [],
+    "demo_url": ""
+  },
+  {
+    "slug": "bench-t-spine-extension",
+    "name": "Kneeling Bench T-Spine Extension",
+    "movement_pattern": "thoracic_mobility",
+    "primary_muscles": ["thoracic extensors"],
+    "secondary_muscles": ["lats", "triceps"],
+    "purpose": "Opens thoracic extension and lat length so overhead pressing comes from the upper back instead of lower-back arch.",
+    "equipment": ["bodyweight", "bench"],
+    "difficulty": 1,
+    "instructions": "Kneel facing a bench and place your elbows on it about shoulder-width apart, hands together as if praying. Sit your hips back toward your heels while letting your head and chest sink between your arms. Hold the deep position, breathe out slowly, and feel the mid-back and armpits stretch.",
+    "form_cues": [
+      "Hips sit back so the stretch lands in the mid-back, not the shoulders alone",
+      "Let the chest melt toward the floor on each exhale",
+      "Keep ribs from flaring; the bend comes from the upper back",
+      "Elbows stay planted, hands relaxed"
+    ],
+    "common_errors": [
+      "Arching the lower back instead of the upper back",
+      "Elbows sliding wide off the bench",
+      "Holding the breath and bracing against the stretch"
+    ],
+    "regressions": ["Higher surface (countertop)", "Child's pose with arms extended"],
+    "progressions": ["Hold a light band or dowel to bias external rotation", "Longer holds with slow exhales"],
+    "contraindications": ["avoid with acute shoulder impingement"],
+    "demo_url": ""
+  },
+  {
+    "slug": "band-shoulder-pass-through",
+    "name": "Band Shoulder Pass-Through",
+    "movement_pattern": "shoulder_mobility",
+    "primary_muscles": ["shoulder joint capsule", "chest"],
+    "secondary_muscles": ["anterior deltoids", "lats", "biceps"],
+    "purpose": "A daily-dose shoulder opener that maintains overhead and behind-body range against pressing and desk-posture stiffness.",
+    "equipment": ["band"],
+    "difficulty": 1,
+    "instructions": "Hold a light band in front of your thighs with a grip wide enough that there is gentle tension. Keeping both arms straight, raise the band overhead and continue behind you as far as comfortable, then reverse back to the front. Narrow your grip slightly over time as range improves.",
+    "form_cues": [
+      "Arms stay straight the whole circle",
+      "Ribs down; do not arch the lower back to get the band behind you",
+      "Move slowly through the sticky point overhead",
+      "Even pull on both sides of the band"
+    ],
+    "common_errors": [
+      "Bending the elbows to sneak the band over",
+      "Gripping too narrow too soon and forcing the shoulders",
+      "Arching the back as the band passes overhead"
+    ],
+    "regressions": ["Wider grip", "Only go to the overhead position and return"],
+    "progressions": ["Gradually narrower grip", "Prone lift-off (arms overhead, lift a dowel off the floor)"],
+    "contraindications": ["avoid with recent shoulder dislocation or instability"],
+    "demo_url": ""
+  },
+  {
+    "slug": "wall-slide",
+    "name": "Wall Slide",
+    "movement_pattern": "shoulder_mobility",
+    "primary_muscles": ["serratus anterior", "lower traps"],
+    "secondary_muscles": ["rotator cuff", "deltoids"],
+    "purpose": "Grooves clean overhead scapular mechanics, teaching the shoulder blades to rotate upward instead of shrugging.",
+    "equipment": ["bodyweight", "wall"],
+    "difficulty": 1,
+    "instructions": "Stand with your back against a wall, feet a few inches out, and press your lower back, forearms, and hands lightly against it in a goalpost position. Slide your arms up the wall as far as they go without anything peeling off, then slide back down. Move slowly and keep the ribs down throughout.",
+    "form_cues": [
+      "Forearms and wrists stay in contact with the wall",
+      "Ribs down; do not let the lower back arch away from the wall",
+      "Slide up by rotating the shoulder blades, not shrugging",
+      "Stop at the height where contact breaks and work there"
+    ],
+    "common_errors": [
+      "Arching the lower back to fake more overhead range",
+      "Wrists peeling off the wall on the way up",
+      "Shrugging the shoulders toward the ears"
+    ],
+    "regressions": ["Face-the-wall slide with hands on wall", "Smaller range of motion"],
+    "progressions": ["Add a light band around the wrists", "Wall slide with lift-off at the top"],
+    "contraindications": ["avoid with acute shoulder impingement"],
+    "demo_url": ""
+  },
+  {
+    "slug": "shadowboxing-rounds",
+    "name": "Shadowboxing Rounds",
+    "movement_pattern": "conditioning",
+    "primary_muscles": ["shoulders", "core"],
+    "secondary_muscles": ["calves", "quadriceps", "cardiovascular system"],
+    "purpose": "The program's primary low-impact cardio, building conditioning and boxing skill simultaneously in timed rounds.",
+    "equipment": ["bodyweight"],
+    "difficulty": 2,
+    "instructions": "Set a round timer, commonly 3 minutes work with 1 minute rest, and move continuously throwing punch combinations at the air. Stay light on your feet, mixing jabs, crosses, hooks, and defensive movement like slips and footwork. Keep punches crisp but relaxed; speed and rhythm over raw force.",
+    "form_cues": [
+      "Hands return to the chin after every punch",
+      "Rotate hips and rear foot into crosses and hooks",
+      "Stay on the balls of the feet, knees soft",
+      "Exhale sharply with each punch"
+    ],
+    "common_errors": [
+      "Dropping the hands as fatigue sets in",
+      "Arm-punching without hip rotation",
+      "Standing flat-footed and square",
+      "Fully extending and snapping the elbows on air punches"
+    ],
+    "regressions": ["Shorter rounds (90 seconds)", "Footwork-only rounds"],
+    "progressions": ["Longer or more rounds", "Add light hand weights for short blocks"],
+    "contraindications": ["stop snapping punches with elbow pain"],
+    "demo_url": ""
+  },
+  {
+    "slug": "dumbbell-thruster",
+    "name": "Dumbbell Thruster",
+    "movement_pattern": "conditioning",
+    "primary_muscles": ["quadriceps", "deltoids"],
+    "secondary_muscles": ["glutes", "triceps", "core", "cardiovascular system"],
+    "purpose": "A full-body, low-impact conditioning finisher that spikes heart rate with load instead of jumping.",
+    "equipment": ["dumbbell"],
+    "difficulty": 3,
+    "instructions": "Hold two light dumbbells at your shoulders and squat to parallel. Drive up hard and use the momentum from your legs to press the dumbbells overhead in one fluid motion. Lower the dumbbells back to your shoulders as you descend into the next squat.",
+    "form_cues": [
+      "One continuous motion: the squat drive powers the press",
+      "Full squat depth, full overhead lockout",
+      "Heels down through the leg drive",
+      "Breathe every rep: inhale down, exhale up"
+    ],
+    "common_errors": [
+      "Pausing between the squat and the press, losing the leg drive",
+      "Cutting squat depth as fatigue builds",
+      "Arching the back at the overhead finish",
+      "Going too heavy and turning it into slow singles"
+    ],
+    "regressions": ["Lighter dumbbells", "Squat-to-press as two separate movements"],
+    "progressions": ["Heavier dumbbells", "EMOM format: fixed reps every minute"],
+    "contraindications": ["avoid with acute shoulder impingement", "avoid during acute low back flare-up"],
+    "demo_url": ""
+  }
+]
