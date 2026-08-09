@@ -1,0 +1,247 @@
+"use client";
+
+/* WORKOUT MODE — execution screen. Current exercise, cues, previous
+   performance, one-tap set logging, rest timer, voice notes. */
+
+import { use, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { api, useFetch } from "@/lib/client";
+import InputBar, { Submission } from "@/components/InputBar";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Any = any;
+
+export default function WorkoutModePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
+  const router = useRouter();
+  const { data, reload } = useFetch<Any>(`/api/workouts/${id}`);
+  const [sessionId, setSessionId] = useState<string | null>(null);
+  const [idx, setIdx] = useState(0);
+  const [loggedSets, setLoggedSets] = useState<Record<string, number>>({});
+  const [rest, setRest] = useState<number | null>(null);
+  const [voiceReply, setVoiceReply] = useState<string | null>(null);
+  const [finishing, setFinishing] = useState(false);
+  const [sessionRpe, setSessionRpe] = useState(7);
+
+  const w = data?.workout;
+  const rx: Any[] = w?.prescriptions ?? [];
+  const current = rx[idx];
+  const prevPerf = (data?.previous_performances ?? []).find(
+    (p: Any) => p.exercise_id === current?.exercise?.id
+  );
+
+  // rest timer countdown
+  useEffect(() => {
+    if (rest === null || rest <= 0) return;
+    const t = setTimeout(() => setRest((r) => (r !== null ? r - 1 : null)), 1000);
+    return () => clearTimeout(t);
+  }, [rest]);
+
+  const start = async () => {
+    const res = await api<Any>("/api/sessions", { method: "POST", json: { workout_id: id } });
+    setSessionId(res.session.id);
+  };
+
+  const editRef = useRef<{ reps?: number; load?: number; rpe?: number }>({});
+
+  const logSet = async (rpe?: number) => {
+    if (!current) return;
+    const setNum = (loggedSets[current.id] ?? 0) + 1;
+    await api("/api/performances", {
+      method: "POST",
+      json: {
+        session_id: sessionId ?? undefined,
+        prescription_id: current.id,
+        exercise_id: current.exercise.id,
+        set_number: setNum,
+        reps: editRef.current.reps ?? parseReps(current.reps),
+        load_lb: editRef.current.load ?? current.load_lb ?? undefined,
+        time_seconds: current.time_seconds ?? undefined,
+        rpe: rpe ?? editRef.current.rpe,
+      },
+    });
+    setLoggedSets((s) => ({ ...s, [current.id]: setNum }));
+    if (setNum >= (current.sets ?? 3) && idx < rx.length - 1) {
+      setIdx(idx + 1);
+      setRest(current.rest_seconds ?? 60);
+    } else {
+      setRest(current.rest_seconds ?? 60);
+    }
+  };
+
+  const finish = async () => {
+    if (sessionId) {
+      await api(`/api/sessions/${sessionId}`, {
+        method: "PATCH",
+        json: { session_rpe: sessionRpe, completed: true },
+      });
+    } else {
+      await api(`/api/workouts/${id}`, { method: "PATCH", json: { status: "completed" } });
+    }
+    router.push("/train");
+  };
+
+  const voiceNote = async (s: Submission) => {
+    if (!s.text) return;
+    const res = await api<Any>("/api/voice-note", {
+      method: "POST",
+      json: { text: s.text, session_id: sessionId ?? undefined },
+    });
+    setVoiceReply(res.reply);
+    reload();
+  };
+
+  if (!w) return <main className="p-6 text-muted">Loading…</main>;
+
+  const done = loggedSets[current?.id] ?? 0;
+
+  return (
+    <main className="px-4 pt-[calc(env(safe-area-inset-top)+1rem)] space-y-4">
+      <header className="flex items-center justify-between">
+        <div>
+          <h1 className="text-xl font-bold tracking-tight">{w.title}</h1>
+          <p className="text-muted text-xs">
+            {w.duration_min} min · exercise {Math.min(idx + 1, rx.length)} of {rx.length}
+          </p>
+        </div>
+        {!sessionId && w.status !== "completed" ? (
+          <button onClick={start} className="rounded-full bg-accent text-black text-sm font-bold px-4 py-2">
+            Start
+          </button>
+        ) : (
+          <button onClick={() => setFinishing(true)} className="rounded-full border border-line bg-surface text-sm font-semibold px-4 py-2">
+            Finish
+          </button>
+        )}
+      </header>
+
+      {rest !== null && rest > 0 && (
+        <div className="card p-3 border-info/40 flex items-center justify-between">
+          <span className="text-sm text-muted">Rest</span>
+          <span className="text-2xl font-bold tabular-nums">{rest}s</span>
+          <button className="text-xs text-muted" onClick={() => setRest(null)}>skip</button>
+        </div>
+      )}
+
+      {finishing ? (
+        <section className="card p-5 space-y-4">
+          <h2 className="font-semibold">How hard was the session?</h2>
+          <div className="flex items-center gap-3">
+            <input
+              type="range" min={1} max={10} step={0.5} value={sessionRpe}
+              onChange={(e) => setSessionRpe(Number(e.target.value))}
+              className="flex-1 accent-[var(--accent)]"
+            />
+            <span className="text-xl font-bold tabular-nums w-10 text-right">{sessionRpe}</span>
+          </div>
+          <button onClick={finish} className="w-full rounded-2xl bg-accent text-black font-bold py-3">
+            Complete workout
+          </button>
+        </section>
+      ) : current ? (
+        <>
+          <section className="card p-5 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h2 className="text-2xl font-bold leading-tight">{current.exercise.name}</h2>
+                <p className="text-muted text-sm mt-0.5">
+                  {current.sets} × {current.reps ?? (current.time_seconds ? `${current.time_seconds}s` : "—")}
+                  {current.load_lb ? ` @ ${current.load_lb} lb` : ""}
+                  {current.target_rpe ? ` · RPE ${current.target_rpe}` : ""}
+                </p>
+              </div>
+              <div className="h-14 w-14 rounded-xl bg-surface2 border border-line grid place-items-center text-2xl shrink-0">
+                🎬
+              </div>
+            </div>
+
+            {prevPerf && (
+              <p className="text-xs text-info">
+                Last time: {prevPerf.reps ?? "—"} reps
+                {prevPerf.load_lb ? ` @ ${prevPerf.load_lb} lb` : ""}
+                {prevPerf.rpe ? ` · RPE ${prevPerf.rpe}` : ""}
+              </p>
+            )}
+
+            {(current.exercise.form_cues ?? []).length > 0 && (
+              <ul className="text-sm text-ink/80 space-y-1">
+                {current.exercise.form_cues.slice(0, 3).map((c: string) => (
+                  <li key={c} className="flex gap-2"><span className="text-accent">•</span>{c}</li>
+                ))}
+              </ul>
+            )}
+            {current.reasoning && (
+              <p className="text-xs text-muted italic">{current.reasoning}</p>
+            )}
+
+            <div className="grid grid-cols-3 gap-2 pt-1">
+              <QuickEdit label="Reps" defaultValue={parseReps(current.reps)} onChange={(v) => (editRef.current.reps = v)} />
+              <QuickEdit label="Load lb" defaultValue={current.load_lb ?? undefined} onChange={(v) => (editRef.current.load = v)} />
+              <QuickEdit label="RPE" defaultValue={undefined} onChange={(v) => (editRef.current.rpe = v)} />
+            </div>
+
+            <button
+              onClick={() => logSet()}
+              className="w-full rounded-2xl bg-accent text-black font-bold py-3.5 text-lg active:scale-[0.98]"
+            >
+              Log set {done + 1} of {current.sets}
+            </button>
+          </section>
+
+          <div className="flex items-center justify-between text-sm">
+            <button className="text-muted" disabled={idx === 0} onClick={() => setIdx(idx - 1)}>
+              ← Prev
+            </button>
+            <span className="text-muted text-xs">
+              {rx.map((p: Any, i: number) => (
+                <span key={p.id} className={i === idx ? "text-accent" : ""}>●</span>
+              ))}
+            </span>
+            <button className="text-muted" disabled={idx >= rx.length - 1} onClick={() => setIdx(idx + 1)}>
+              Next →
+            </button>
+          </div>
+
+          {rx[idx + 1] && (
+            <p className="text-xs text-muted text-center">
+              Next: {rx[idx + 1].exercise.name}
+            </p>
+          )}
+        </>
+      ) : (
+        <p className="text-muted">No exercises prescribed.</p>
+      )}
+
+      {voiceReply && (
+        <div className="card p-3 text-sm text-accent border-accent/30">{voiceReply}</div>
+      )}
+
+      <div className="sticky bottom-24 pt-1">
+        <InputBar onSubmit={voiceNote} placeholder='"Used 35s… only got 7… RPE 9…"' />
+      </div>
+    </main>
+  );
+}
+
+function QuickEdit({ label, defaultValue, onChange }: {
+  label: string; defaultValue?: number; onChange: (v: number | undefined) => void;
+}) {
+  return (
+    <label className="block">
+      <span className="text-[10px] uppercase tracking-wider text-muted">{label}</span>
+      <input
+        type="number"
+        inputMode="decimal"
+        defaultValue={defaultValue}
+        onChange={(e) => onChange(e.target.value === "" ? undefined : Number(e.target.value))}
+        className="mt-1 w-full rounded-xl border border-line bg-surface2 px-3 py-2 text-center font-semibold outline-none focus:border-accent"
+      />
+    </label>
+  );
+}
+
+function parseReps(reps: string | null): number | undefined {
+  if (!reps) return undefined;
+  const m = /^(\d+)/.exec(reps);
+  return m ? Number(m[1]) : undefined;
+}
