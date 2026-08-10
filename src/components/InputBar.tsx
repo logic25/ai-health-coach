@@ -5,6 +5,7 @@
 
 import { useRef, useState } from "react";
 import { compressImage, useVoice } from "@/lib/client";
+import { CameraIcon, MicIcon, SendIcon } from "./icons";
 
 export interface Submission {
   text?: string;
@@ -63,11 +64,13 @@ export default function InputBar({
       <button
         aria-label="Photo"
         onClick={() => fileRef.current?.click()}
-        className={`shrink-0 h-11 w-11 rounded-full border border-line grid place-items-center text-lg ${
-          pendingImage ? "bg-accent/20 border-accent" : "bg-surface"
+        className={`shrink-0 h-11 w-11 rounded-full border grid place-items-center ${
+          pendingImage
+            ? "bg-accent/20 border-accent text-accent"
+            : "bg-surface border-line text-muted"
         }`}
       >
-        📷
+        <CameraIcon size={19} />
       </button>
       <div className="flex-1 flex items-center gap-2 rounded-full border border-line bg-surface px-4 h-11">
         <input
@@ -85,22 +88,22 @@ export default function InputBar({
           aria-label="Send"
           onClick={submitText}
           disabled={busy}
-          className="shrink-0 h-11 w-11 rounded-full bg-accent text-black grid place-items-center text-lg font-bold"
+          className="shrink-0 h-11 w-11 rounded-full bg-accent text-black grid place-items-center"
         >
-          ↑
+          <SendIcon size={19} />
         </button>
       ) : (
         <button
           aria-label="Voice"
           onClick={() => (voice.listening ? voice.stop() : voice.start())}
           disabled={!voice.supported || busy}
-          className={`shrink-0 h-11 w-11 rounded-full border grid place-items-center text-lg ${
+          className={`shrink-0 h-11 w-11 rounded-full border grid place-items-center ${
             voice.listening
-              ? "bg-danger/20 border-danger animate-pulse-soft"
-              : "bg-surface border-line"
+              ? "bg-danger/20 border-danger text-danger animate-pulse-soft"
+              : "bg-surface border-line text-muted"
           } ${!voice.supported ? "opacity-40" : ""}`}
         >
-          🎙️
+          <MicIcon size={19} />
         </button>
       )}
     </div>

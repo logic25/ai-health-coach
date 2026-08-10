@@ -80,6 +80,97 @@ export function useVoice(onText: (text: string) => void) {
   return { listening, supported, start, stop };
 }
 
+/* Hands-free wake-word listening (workout mode).
+   Runs SpeechRecognition continuously, auto-restarting when the browser
+   stops it. Say "<wakeWord>, log nine reps" in one breath, or say the wake
+   word alone and speak the command in the next few seconds. Requests a
+   screen wake lock while active so the mic stays alive during a workout. */
+export function useWakeWord(wakeWord: string, onCommand: (text: string) => void) {
+  const [enabled, setEnabled] = useState(false);
+  const [armed, setArmed] = useState(false); // wake word heard, awaiting command
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recRef = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const lockRef = useRef<any>(null);
+  const armedUntil = useRef(0);
+  const enabledRef = useRef(false);
+  const onCommandRef = useRef(onCommand);
+  useEffect(() => {
+    onCommandRef.current = onCommand;
+  }, [onCommand]);
+
+  const supported =
+    typeof window !== "undefined" &&
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Boolean((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition);
+
+  useEffect(() => {
+    enabledRef.current = enabled;
+    if (!enabled) {
+      recRef.current?.stop?.();
+      recRef.current = null;
+      lockRef.current?.release?.().catch(() => {});
+      lockRef.current = null;
+      return;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    const SR = w.SpeechRecognition || w.webkitSpeechRecognition;
+    if (!SR) return;
+
+    navigator.wakeLock?.request("screen").then((l) => (lockRef.current = l)).catch(() => {});
+
+    const wake = wakeWord.toLowerCase();
+    const start = () => {
+      const rec = new SR();
+      rec.lang = "en-US";
+      rec.continuous = true;
+      rec.interimResults = false;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      rec.onresult = (e: any) => {
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          if (!e.results[i].isFinal) continue;
+          const text = (e.results[i][0].transcript as string).trim();
+          const lower = text.toLowerCase();
+          const idx = lower.indexOf(wake);
+          if (idx >= 0) {
+            const command = text.slice(idx + wake.length).replace(/^[\s,.:!-]+/, "").trim();
+            if (command) {
+              onCommandRef.current(command);
+              setArmed(false);
+            } else {
+              armedUntil.current = Date.now() + 8000; // "Coach" alone → wait for command
+              setArmed(true);
+            }
+          } else if (Date.now() < armedUntil.current && text) {
+            armedUntil.current = 0;
+            setArmed(false);
+            onCommandRef.current(text);
+          }
+        }
+      };
+      rec.onend = () => {
+        if (enabledRef.current) setTimeout(() => { try { start(); } catch { /* retry next end */ } }, 250);
+      };
+      rec.onerror = () => { /* onend fires next and restarts */ };
+      recRef.current = rec;
+      rec.start();
+    };
+    try { start(); } catch { /* mic permission denied */ }
+
+    return () => {
+      enabledRef.current = false;
+      recRef.current?.stop?.();
+      recRef.current = null;
+      lockRef.current?.release?.().catch(() => {});
+      lockRef.current = null;
+    };
+  }, [enabled, wakeWord]);
+
+  return { enabled, setEnabled, armed: armed && enabled, supported };
+}
+
 /* Camera/photo input compressed to ~1000px JPEG base64. */
 export function compressImage(file: File, maxDim = 1000): Promise<{ base64: string; mediaType: string }> {
   return new Promise((resolve, reject) => {

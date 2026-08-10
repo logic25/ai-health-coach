@@ -7,6 +7,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { api, useFetch } from "@/lib/client";
 import InputBar, { Submission } from "@/components/InputBar";
+import { SunIcon, BellIcon } from "@/components/icons";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Any = any;
@@ -66,15 +67,16 @@ export default function TodayPage() {
         <button
           onClick={runMorning}
           disabled={morningBusy}
-          className="text-xs font-semibold rounded-full border border-line bg-surface px-3 py-2 text-muted active:scale-95"
+          className="text-xs font-semibold rounded-full border border-line bg-surface px-3 py-2 text-muted active:scale-95 flex items-center gap-1.5"
         >
-          {morningBusy ? "Thinking…" : "☀️ Morning brief"}
+          <SunIcon size={14} />
+          {morningBusy ? "Thinking…" : "Morning brief"}
         </button>
       </header>
 
       {(data?.notifications ?? []).map((notif: Any) => (
         <div key={notif.id} className="card p-3.5 border-amber/40 flex items-start gap-3">
-          <span>🔔</span>
+          <span className="text-amber mt-0.5"><BellIcon size={17} /></span>
           <div className="flex-1">
             <p className="text-sm font-semibold">{notif.title}</p>
             {notif.body && <p className="text-xs text-muted mt-0.5">{notif.body}</p>}

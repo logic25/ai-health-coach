@@ -5,6 +5,7 @@
 
 import { useRef, useState } from "react";
 import { api, useFetch, compressImage } from "@/lib/client";
+import { CameraIcon, ClipboardIcon, TrophyIcon } from "@/components/icons";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Any = any;
@@ -12,6 +13,7 @@ type Any = any;
 export default function ProgressPage() {
   const { data, reload } = useFetch<Any>("/api/experiment");
   const { data: photos, reload: reloadPhotos } = useFetch<Any>("/api/photos");
+  const { data: strength } = useFetch<Any>("/api/strength");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -51,9 +53,10 @@ export default function ProgressPage() {
         <button
           onClick={runReview}
           disabled={busy}
-          className="text-xs font-semibold rounded-full border border-line bg-surface px-3 py-2 text-muted"
+          className="text-xs font-semibold rounded-full border border-line bg-surface px-3 py-2 text-muted flex items-center gap-1.5"
         >
-          📋 Run weekly review
+          <ClipboardIcon size={14} />
+          Run weekly review
         </button>
       </header>
 
@@ -77,8 +80,8 @@ export default function ProgressPage() {
               e.target.value = "";
             }}
           />
-          <button onClick={() => fileRef.current?.click()} className="text-sm font-semibold text-info">
-            📸 Add progress photo
+          <button onClick={() => fileRef.current?.click()} className="text-sm font-semibold text-info flex items-center gap-1.5">
+            <CameraIcon size={15} /> Add progress photo
           </button>
           {(photos?.photos ?? []).length > 0 && (
             <span className="text-xs text-muted ml-2">{photos.photos.length} saved</span>
@@ -125,6 +128,41 @@ export default function ProgressPage() {
                 <span className="text-muted">Decision: </span>
                 <span className="text-accent font-semibold">{r.coach_decision?.replace("_", " ")}</span>
               </p>
+            </div>
+          ))}
+        </section>
+      )}
+
+      {/* Strength progression (Ladder-style) */}
+      {(strength?.exercises ?? []).length > 0 && (
+        <section className="space-y-3">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-muted">Strength</h2>
+          {strength.exercises.slice(0, 8).map((e: Any) => (
+            <div key={e.exercise_id} className="card p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="font-semibold text-sm">{e.name}</p>
+                  <p className="text-xs text-muted">
+                    Last: {e.latest_set.reps} × {e.latest_set.load_lb} lb
+                    {e.latest_set.rpe ? ` · RPE ${e.latest_set.rpe}` : ""} · {e.sets_logged} sets logged
+                  </p>
+                </div>
+                <div className="text-right">
+                  <p className="font-bold tabular-nums flex items-center gap-1 justify-end">
+                    {e.latest_e1rm >= e.best_e1rm && e.sets_logged > 1 && (
+                      <span className="text-accent"><TrophyIcon size={14} /></span>
+                    )}
+                    {e.latest_e1rm}
+                    <span className="text-muted text-xs font-normal">e1RM</span>
+                  </p>
+                  <p className={`text-xs font-semibold ${e.change_e1rm >= 0 ? "text-accent" : "text-amber"}`}>
+                    {e.change_e1rm > 0 ? "+" : ""}{e.change_e1rm} lb
+                  </p>
+                </div>
+              </div>
+              {e.next_load && (
+                <p className="text-xs text-info mt-2">{e.next_load.rationale}</p>
+              )}
             </div>
           ))}
         </section>

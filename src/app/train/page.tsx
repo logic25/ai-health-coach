@@ -5,6 +5,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { api, useFetch } from "@/lib/client";
+import { BoltIcon, CalendarIcon } from "@/components/icons";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Any = any;
@@ -40,16 +41,18 @@ export default function TrainPage() {
         <button
           onClick={() => act("gen", () => api("/api/workouts/generate", { method: "POST", json: {} }))}
           disabled={busy !== null}
-          className="flex-1 rounded-2xl bg-accent text-black font-semibold py-3 text-sm active:scale-[0.98]"
+          className="flex-1 rounded-2xl bg-accent text-black font-semibold py-3 text-sm active:scale-[0.98] flex items-center justify-center gap-1.5"
         >
-          {busy === "gen" ? "Building…" : "⚡ Build today's workout"}
+          <BoltIcon size={16} />
+          {busy === "gen" ? "Building…" : "Build today's workout"}
         </button>
         <button
           onClick={() => act("week", () => api("/api/calendar/schedule-week", { method: "POST" }))}
           disabled={busy !== null}
-          className="flex-1 rounded-2xl border border-line bg-surface font-semibold py-3 text-sm active:scale-[0.98]"
+          className="flex-1 rounded-2xl border border-line bg-surface font-semibold py-3 text-sm active:scale-[0.98] flex items-center justify-center gap-1.5"
         >
-          {busy === "week" ? "Planning…" : "🗓️ Plan the week"}
+          <CalendarIcon size={16} />
+          {busy === "week" ? "Planning…" : "Plan the week"}
         </button>
       </div>
 

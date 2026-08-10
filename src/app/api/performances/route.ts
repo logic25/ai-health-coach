@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { route, json } from "@/lib/api";
 import { queryOne } from "@/lib/db";
+import { checkPrForPerformance } from "@/lib/strength";
 
 const schema = z.object({
   session_id: z.string().optional(),
@@ -27,5 +28,8 @@ export const POST = route(async (req) => {
      b.reps ?? null, b.load_lb ?? null, b.time_seconds ?? null, b.rpe ?? null,
      b.completed, b.notes ?? null]
   );
-  return json({ performance: row }, { status: 201 });
+  const pr = await checkPrForPerformance(
+    b.exercise_id, row!.id, b.load_lb ?? null, b.reps ?? null
+  );
+  return json({ performance: row, pr }, { status: 201 });
 });

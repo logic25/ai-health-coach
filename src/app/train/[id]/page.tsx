@@ -1,12 +1,15 @@
 "use client";
 
 /* WORKOUT MODE — execution screen. Current exercise, cues, previous
-   performance, one-tap set logging, rest timer, voice notes. */
+   performance + suggested load, one-tap set logging with PR detection,
+   rest timer, and hands-free voice: toggle listening and say
+   "<wake word>, nine reps at thirty-five" — no tapping mid-set. */
 
 import { use, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { api, useFetch } from "@/lib/client";
+import { api, useFetch, useWakeWord } from "@/lib/client";
 import InputBar, { Submission } from "@/components/InputBar";
+import { MicIcon, PlayIcon, TrophyIcon } from "@/components/icons";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Any = any;
@@ -15,13 +18,18 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
   const { id } = use(params);
   const router = useRouter();
   const { data, reload } = useFetch<Any>(`/api/workouts/${id}`);
+  const { data: profileData } = useFetch<Any>("/api/profile");
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [idx, setIdx] = useState(0);
   const [loggedSets, setLoggedSets] = useState<Record<string, number>>({});
   const [rest, setRest] = useState<number | null>(null);
   const [voiceReply, setVoiceReply] = useState<string | null>(null);
+  const [pr, setPr] = useState<Any>(null);
   const [finishing, setFinishing] = useState(false);
   const [sessionRpe, setSessionRpe] = useState(7);
+
+  const wakeWord: string =
+    profileData?.profile?.preferences?.coach_name ?? "Coach";
 
   const w = data?.workout;
   const rx: Any[] = w?.prescriptions ?? [];
@@ -30,7 +38,6 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
     (p: Any) => p.exercise_id === current?.exercise?.id
   );
 
-  // rest timer countdown
   useEffect(() => {
     if (rest === null || rest <= 0) return;
     const t = setTimeout(() => setRest((r) => (r !== null ? r - 1 : null)), 1000);
@@ -43,14 +50,18 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
   };
 
   const editRef = useRef<{ reps?: number; load?: number; rpe?: number }>({});
+  const sessionRef = useRef<string | null>(null);
+  useEffect(() => {
+    sessionRef.current = sessionId;
+  }, [sessionId]);
 
   const logSet = async (rpe?: number) => {
     if (!current) return;
     const setNum = (loggedSets[current.id] ?? 0) + 1;
-    await api("/api/performances", {
+    const res = await api<Any>("/api/performances", {
       method: "POST",
       json: {
-        session_id: sessionId ?? undefined,
+        session_id: sessionRef.current ?? undefined,
         prescription_id: current.id,
         exercise_id: current.exercise.id,
         set_number: setNum,
@@ -60,13 +71,15 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
         rpe: rpe ?? editRef.current.rpe,
       },
     });
+    if (res.pr?.isPr) {
+      setPr(res.pr);
+      setTimeout(() => setPr(null), 6000);
+    }
     setLoggedSets((s) => ({ ...s, [current.id]: setNum }));
     if (setNum >= (current.sets ?? 3) && idx < rx.length - 1) {
       setIdx(idx + 1);
-      setRest(current.rest_seconds ?? 60);
-    } else {
-      setRest(current.rest_seconds ?? 60);
     }
+    setRest(current.rest_seconds ?? 60);
   };
 
   const finish = async () => {
@@ -83,7 +96,6 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
 
   const voiceNote = async (s: Submission) => {
     if (s.imageBase64) {
-      // "look at this" — mid-workout photo goes through the vision coach
       const res = await api<Any>("/api/chat", {
         method: "POST",
         json: {
@@ -100,11 +112,15 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
     if (!s.text) return;
     const res = await api<Any>("/api/voice-note", {
       method: "POST",
-      json: { text: s.text, session_id: sessionId ?? undefined },
+      json: { text: s.text, session_id: sessionRef.current ?? undefined },
     });
     setVoiceReply(res.reply);
     reload();
   };
+
+  const handsFree = useWakeWord(wakeWord, (command) => {
+    voiceNote({ text: command, modality: "voice" });
+  });
 
   if (!w) return <main className="p-6 text-muted">Loading…</main>;
 
@@ -129,6 +145,39 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
           </button>
         )}
       </header>
+
+      {/* hands-free toggle */}
+      {handsFree.supported && (
+        <button
+          onClick={() => handsFree.setEnabled(!handsFree.enabled)}
+          className={`w-full card px-4 py-3 flex items-center gap-3 text-sm text-left transition-colors ${
+            handsFree.enabled ? "border-accent/50" : ""
+          }`}
+        >
+          <span className={handsFree.enabled ? "text-accent" : "text-muted"}>
+            <MicIcon size={18} />
+          </span>
+          {handsFree.enabled ? (
+            <span className={handsFree.armed ? "text-accent" : ""}>
+              {handsFree.armed
+                ? "Listening — go ahead…"
+                : <>Hands-free on — say <b>&quot;{wakeWord}, …&quot;</b> anytime</>}
+            </span>
+          ) : (
+            <span className="text-muted">Enable hands-free voice (&quot;{wakeWord}, nine reps at 35&quot;)</span>
+          )}
+        </button>
+      )}
+
+      {pr && (
+        <div className="card p-3.5 border-accent bg-accent/10 flex items-center gap-3">
+          <span className="text-accent"><TrophyIcon size={22} /></span>
+          <div>
+            <p className="text-sm font-bold text-accent">New PR!</p>
+            <p className="text-xs text-ink/85">{pr.note}</p>
+          </div>
+        </div>
+      )}
 
       {rest !== null && rest > 0 && (
         <div className="card p-3 border-info/40 flex items-center justify-between">
@@ -165,17 +214,22 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
                   {current.target_rpe ? ` · RPE ${current.target_rpe}` : ""}
                 </p>
               </div>
-              <div className="h-14 w-14 rounded-xl bg-surface2 border border-line grid place-items-center text-2xl shrink-0">
-                🎬
+              <div className="h-14 w-14 rounded-xl bg-surface2 border border-line grid place-items-center text-muted shrink-0">
+                <PlayIcon size={24} />
               </div>
             </div>
 
             {prevPerf && (
-              <p className="text-xs text-info">
-                Last time: {prevPerf.reps ?? "—"} reps
-                {prevPerf.load_lb ? ` @ ${prevPerf.load_lb} lb` : ""}
-                {prevPerf.rpe ? ` · RPE ${prevPerf.rpe}` : ""}
-              </p>
+              <div className="text-xs space-y-0.5">
+                <p className="text-info">
+                  Last time: {prevPerf.reps ?? "—"} reps
+                  {prevPerf.load_lb ? ` @ ${prevPerf.load_lb} lb` : ""}
+                  {prevPerf.rpe ? ` · RPE ${prevPerf.rpe}` : ""}
+                </p>
+                {prevPerf.suggestion && (
+                  <p className="text-accent">{prevPerf.suggestion.rationale}</p>
+                )}
+              </div>
             )}
 
             {(current.exercise.form_cues ?? []).length > 0 && (
@@ -191,7 +245,7 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
 
             <div className="grid grid-cols-3 gap-2 pt-1">
               <QuickEdit label="Reps" defaultValue={parseReps(current.reps)} onChange={(v) => (editRef.current.reps = v)} />
-              <QuickEdit label="Load lb" defaultValue={current.load_lb ?? undefined} onChange={(v) => (editRef.current.load = v)} />
+              <QuickEdit label="Load lb" defaultValue={current.load_lb ?? prevPerf?.suggestion?.loadLb ?? undefined} onChange={(v) => (editRef.current.load = v)} />
               <QuickEdit label="RPE" defaultValue={undefined} onChange={(v) => (editRef.current.rpe = v)} />
             </div>
 
@@ -207,7 +261,7 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
             <button className="text-muted" disabled={idx === 0} onClick={() => setIdx(idx - 1)}>
               ← Prev
             </button>
-            <span className="text-muted text-xs">
+            <span className="text-muted text-xs tracking-widest">
               {rx.map((p: Any, i: number) => (
                 <span key={p.id} className={i === idx ? "text-accent" : ""}>●</span>
               ))}

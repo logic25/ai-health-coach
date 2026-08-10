@@ -6,6 +6,7 @@
 import { useState } from "react";
 import { api, useFetch } from "@/lib/client";
 import InputBar, { Submission } from "@/components/InputBar";
+import { CartIcon } from "@/components/icons";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Any = any;
@@ -84,9 +85,10 @@ export default function EatPage() {
         <button
           onClick={weeklyPlan}
           disabled={planBusy}
-          className="text-xs font-semibold rounded-full border border-line bg-surface px-3 py-2 text-muted"
+          className="text-xs font-semibold rounded-full border border-line bg-surface px-3 py-2 text-muted flex items-center gap-1.5"
         >
-          {planBusy ? "Planning…" : "🛒 Weekly plan"}
+          <CartIcon size={14} />
+          {planBusy ? "Planning…" : "Weekly plan"}
         </button>
       </header>
 

@@ -2,6 +2,7 @@
 import { z } from "zod";
 import { route, json } from "@/lib/api";
 import { query, queryOne } from "@/lib/db";
+import { suggestNextLoad } from "@/lib/strength";
 
 export const GET = route(async (_req, ctx: { params: Promise<{ id: string }> }) => {
   const { id } = await ctx.params;
@@ -32,7 +33,15 @@ export const GET = route(async (_req, ctx: { params: Promise<{ id: string }> }) 
      order by p.exercise_id, p.recorded_at desc`,
     [id]
   );
-  return json({ workout: rows[0], previous_performances: prev });
+  const withSuggestions = prev.map((p) => ({
+    ...p,
+    suggestion: suggestNextLoad({
+      loadLb: p.load_lb != null ? Number(p.load_lb) : null,
+      reps: p.reps != null ? Number(p.reps) : null,
+      rpe: p.rpe != null ? Number(p.rpe) : null,
+    }),
+  }));
+  return json({ workout: rows[0], previous_performances: withSuggestions });
 });
 
 const patchSchema = z.object({

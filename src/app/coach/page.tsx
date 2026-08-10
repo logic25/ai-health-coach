@@ -60,7 +60,7 @@ export default function CoachPage() {
                 <div className="mt-2 flex flex-wrap gap-1">
                   {m.extracted.map((e: Any, i: number) => (
                     <span key={i} className="text-[10px] rounded-full bg-surface2 border border-line px-2 py-0.5 text-muted">
-                      💾 {e.summary}
+                      <span className="text-accent">●</span> saved · {e.summary}
                     </span>
                   ))}
                 </div>
