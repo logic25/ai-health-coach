@@ -82,6 +82,21 @@ export default function WorkoutModePage({ params }: { params: Promise<{ id: stri
   };
 
   const voiceNote = async (s: Submission) => {
+    if (s.imageBase64) {
+      // "look at this" — mid-workout photo goes through the vision coach
+      const res = await api<Any>("/api/chat", {
+        method: "POST",
+        json: {
+          text: s.text || "Look at this — what is it / what should I do with it?",
+          imageBase64: s.imageBase64,
+          imageMediaType: s.imageMediaType,
+          modality: "photo",
+        },
+      });
+      setVoiceReply(res.reply);
+      reload();
+      return;
+    }
     if (!s.text) return;
     const res = await api<Any>("/api/voice-note", {
       method: "POST",

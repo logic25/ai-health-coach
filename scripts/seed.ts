@@ -44,7 +44,9 @@ async function main() {
           preferred_workout_slot: "first thing in the morning",
           eating_window: { start: "12:00", end: "20:30" },
           cardio: ["boxing"],
-          equipment: ["dumbbells", "kettlebell", "bands", "pullup_bar", "bench"],
+          equipment: ["kettlebell", "dumbbells", "bands", "pullup_bar", "bench"],
+          preferred_equipment: ["kettlebell"],
+          training_style: "Prefers kettlebell-based training for most strength work.",
           rhythm_note:
             "Preferred rhythm is a default, not a rule — adapt around real life instead of marking days failed.",
         }),

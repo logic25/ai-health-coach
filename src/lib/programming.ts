@@ -67,6 +67,9 @@ export async function generateWorkout(opts: {
 
   const plan = snapshot.training.plan;
   const recoveryBand = snapshot.recovery.band ?? "green";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const prefs = (snapshot.profile as any)?.preferences ?? {};
+  const preferredEquipment: string[] = prefs.preferred_equipment ?? [];
 
   let built: {
     title: string;
@@ -88,6 +91,9 @@ export async function generateWorkout(opts: {
         `- Respect active symptoms and injury limitations: never program painful patterns; substitute and say why.\n` +
         `- Address mobility findings: the user has a restricted RIGHT hip in pigeon — include tolerable hip mobility work on lower/full-body days (use regressions, not max stretch).\n` +
         `- Progress/regress based on recent performances and RPE (last sets ≤ RPE 7 with full reps => small progression).\n` +
+        (preferredEquipment.length > 0
+          ? `- Equipment preference: build primarily around ${preferredEquipment.join(", ")} exercises when the pattern allows; use others only when clearly better for the goal.\n`
+          : "") +
         `- Include brief reasoning for important choices.\n\n` +
         `=== LIBRARY ===\n${JSON.stringify(library)}\n\n=== USER STATE ===\n${renderSnapshot(snapshot)}`,
       messages: [
@@ -107,13 +113,14 @@ export async function generateWorkout(opts: {
     built = deterministicWorkout(
       library,
       opts.focusHint ?? inferFocus(plan, date),
-      recoveryBand
+      recoveryBand,
+      preferredEquipment
     );
   }
 
   // Guardrail: red recovery forces a mobility/recovery day even if the model pushed training
   if (recoveryBand === "red" && !built.recommend_recovery_instead && built.focus !== "mobility") {
-    built = deterministicWorkout(library, "mobility", "red");
+    built = deterministicWorkout(library, "mobility", "red", preferredEquipment);
     built.reasoning =
       "Recovery is RED (guardrail): swapped planned training for mobility/recovery. " + built.reasoning;
   }
@@ -166,7 +173,8 @@ export function deterministicWorkout(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   library: any[],
   focus: string,
-  recoveryBand: string
+  recoveryBand: string,
+  preferredEquipment: string[] = []
 ): {
   title: string;
   focus: string;
@@ -187,9 +195,20 @@ export function deterministicWorkout(
 
   const exercises: GeneratedExercise[] = [];
   for (const p of patterns) {
+    // prefer the user's preferred equipment (e.g. kettlebell-first), then
+    // moderate difficulty
+    const prefScore = (e: { equipment?: string[] }) =>
+      preferredEquipment.length > 0 &&
+      (e.equipment ?? []).some((eq: string) => preferredEquipment.includes(eq))
+        ? 0
+        : 1;
     const candidates = library
       .filter((e) => e.movement_pattern === p && e.difficulty <= maxDifficulty)
-      .sort((a, b) => Math.abs(a.difficulty - 2.5) - Math.abs(b.difficulty - 2.5));
+      .sort(
+        (a, b) =>
+          prefScore(a) - prefScore(b) ||
+          Math.abs(a.difficulty - 2.5) - Math.abs(b.difficulty - 2.5)
+      );
     if (candidates.length === 0) continue;
     const pick = candidates[0];
     const isMobility = p.includes("mobility");

@@ -24,7 +24,8 @@ describe("week helpers", () => {
 
 describe("deterministicWorkout", () => {
   const lib = [
-    { slug: "goblet-squat", movement_pattern: "squat", difficulty: 2 },
+    { slug: "goblet-squat", movement_pattern: "squat", difficulty: 2, equipment: ["dumbbell"] },
+    { slug: "kb-front-rack-squat", movement_pattern: "squat", difficulty: 3, equipment: ["kettlebell"] },
     { slug: "rdl", movement_pattern: "hinge", difficulty: 3 },
     { slug: "split-squat", movement_pattern: "lunge", difficulty: 3 },
     { slug: "glute-bridge", movement_pattern: "glute", difficulty: 1 },
@@ -52,5 +53,12 @@ describe("deterministicWorkout", () => {
   it("never selects difficulty-5 exercises even on green", () => {
     const w = deterministicWorkout(lib, "lower_core", "green");
     expect(w.exercises.map((e) => e.slug)).not.toContain("heavy-thing");
+  });
+
+  it("prefers the user's preferred equipment when set", () => {
+    const without = deterministicWorkout(lib, "lower_core", "green");
+    expect(without.exercises.map((e) => e.slug)).toContain("goblet-squat");
+    const withKb = deterministicWorkout(lib, "lower_core", "green", ["kettlebell"]);
+    expect(withKb.exercises.map((e) => e.slug)).toContain("kb-front-rack-squat");
   });
 });
