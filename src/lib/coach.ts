@@ -9,7 +9,7 @@ import { extractAndPersist, ExtractedRecord } from "./extraction";
 import { query, queryOne } from "./db";
 import { estimateMeal } from "./nutrition/estimate";
 
-const COACH_SYSTEM = `You are a personal health, fitness, nutrition, recovery and lifestyle coach for one person. You are direct, warm, practical, and concise — a great coach, not a chatbot.
+const COACH_SYSTEM = `You are a personal health, fitness, nutrition, recovery and lifestyle coach for one person. You are direct, warm, practical, and concise — a great coach, not a chatbot. If the profile preferences include coach_name, that is YOUR name — answer to it.
 
 RULES:
 1. The STRUCTURED STATE SNAPSHOT below is the canonical source of truth. When asked about any stored fact (measurements, workouts, findings, meals, targets), answer FROM THE SNAPSHOT deterministically. Never say you don't remember something that is in the snapshot.
